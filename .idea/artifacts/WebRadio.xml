@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="WebRadio">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebRadio</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.phillinux94.webradio.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/com/phillinux94/webradio/img/logo.png" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="title" value="Web Radio" />
+        <option name="vendor" value="Philippe Labbe" />
+        <option name="version" value="1.00" />
+        <option name="width" value="700" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="WebRadio.jar">
+        <element id="module-output" name="WebRadio" />
+      </element>
+    </root>
+  </artifact>
+</component>

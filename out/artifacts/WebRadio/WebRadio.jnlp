@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="WebRadio.jnlp">
+  <information>
+    <title>Web Radio</title>
+    <vendor>Philippe Labbe</vendor>
+    <description>WebRadio</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="WebRadio.jar" size="1906708" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="700" height="400" main-class="com.phillinux94.webradio.Main"  name="WebRadio" />
+  <update check="background"/>
+</jnlp>
