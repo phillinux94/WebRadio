@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="WebRadio.jar" size="1906708" download="eager" />
+    <jar href="WebRadio.jar" size="1908139" download="eager" />
   </resources>
   <jfx:javafx-desc  width="700" height="400" main-class="com.phillinux94.webradio.Main"  name="WebRadio" />
   <update check="background"/>

@@ -1,13 +1,21 @@
 package com.phillinux94.webradio;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Collections;
 
 
 public class Controller {
@@ -32,6 +40,12 @@ public class Controller {
 
     @FXML
     private TitledPane paneGeneraliste;
+
+    @FXML
+    private Label time;
+
+    @FXML
+    private Label date;
 
 
     @FXML
@@ -186,7 +200,38 @@ public class Controller {
 
         }
 
+    }
 
+    @FXML
+    public void initialize() {
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+
+            LocalTime currentTime = LocalTime.now();
+            LocalDate currentDate = LocalDate.now();
+
+            String jour = String.valueOf(currentDate.getDayOfMonth());
+            String mois = String.valueOf(currentDate.getMonthValue());
+            String annee = String.valueOf(currentDate.getYear());
+
+            jour = String.join("", Collections.nCopies(2 - jour.length(), "0")) + jour;
+            mois = String.join("", Collections.nCopies(2 - mois.length(), "0")) + mois;
+
+            date.setText(jour + "/" + mois + "/" + annee);
+            String heures = String.valueOf(currentTime.getHour());
+            String minutes = String.valueOf(currentTime.getMinute());
+            String secondes = String.valueOf(currentTime.getSecond());
+
+            heures = String.join("", Collections.nCopies(2 - heures.length(), "0")) + heures;
+            minutes = String.join("", Collections.nCopies(2 - minutes.length(), "0")) + minutes;
+            secondes = String.join("", Collections.nCopies(2 - secondes.length(), "0")) + secondes;
+
+            time.setText(heures + ":" + minutes + ":" + secondes);
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
     }
 }
 
