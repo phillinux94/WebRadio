@@ -4,11 +4,8 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -23,14 +20,6 @@ public class Controller {
     Media media;
     MediaPlayer player = null;
 
-    @FXML
-    private Button btnMusique;
-
-    @FXML
-    private Button btnInformation;
-
-    @FXML
-    private Button btnGeneraliste;
 
     @FXML
     private TitledPane paneMusique;
@@ -186,21 +175,7 @@ public class Controller {
         }
     }
 
-    @FXML
-    private void Stop() {
 
-        try {
-
-            this.player.stop();
-
-        }
-        catch (Exception e){
-
-            System.out.println(e.getMessage());
-
-        }
-
-    }
 
     @FXML
     public void initialize() {
